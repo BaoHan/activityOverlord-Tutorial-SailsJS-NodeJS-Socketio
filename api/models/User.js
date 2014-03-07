@@ -8,28 +8,40 @@
 
 module.exports = {
 
-  attributes: {
+    schema: true,
+
+    attributes: {
 
     name: {
-        type: 'string',
-        required: true
-    },
+            type: 'string',
+            required: true
+        },
 
-    title: {
-        type: 'string'
-    },
+        title: {
+            type: 'string'
+        },
 
-    email: {
-        type: 'string',
-        email: true,
-        required: true,
-        unique: true
-    },
+        email: {
+            type: 'string',
+            email: true,
+            required: true,
+            unique: true
+        },
 
-    encryptedPassword: {
-        type: 'string'
-    }
+        encryptedPassword: {
+            type: 'string'
+        }
+        // ,
 
-  }
+        // toJSON: function () {
+        //     var obj = this.toObject();
+        //     delete obj.password;
+        //     delete obj.confirmation;
+        //     delete obj.encryptedPassword;
+        //     delete obj._csrf;
+        //     return obj;
+        // }
+
+      }
 
 };
