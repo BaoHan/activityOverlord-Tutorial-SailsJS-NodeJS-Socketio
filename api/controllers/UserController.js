@@ -48,6 +48,8 @@ module.exports = {
     User.findOne(req.params.all('id'), function foundUser (err, user) {
       if (err) return next(err);
       if (!user) return next();
+      console.log(req.session.authentificated);
+      console.log(req.session.User);
       res.view({
         user: user
       });
