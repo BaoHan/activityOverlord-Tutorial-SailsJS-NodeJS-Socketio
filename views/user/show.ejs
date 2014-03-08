@@ -1,5 +1,10 @@
 <div class="container">
     <h1><%= user.name %></h1>
+    <% if(user.admin) { %>
+        <img src="/images/admin.png" alt="admin">
+    <% } else { %>
+        <img src="/images/pawn.png" alt="">
+    <% } %>
     <h3><%= user.title %></h3>
     <hr>
     <h3>Contact : <%= user.email%></h3>
